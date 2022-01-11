@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}モデルの展開を行えるページ{% endblock %}</h1>
+  <a class="action" href="{{ url_for('blog.create') }}">モデルの読み込み</a>
+{% endblock %}

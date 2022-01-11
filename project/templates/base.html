@@ -1,0 +1,19 @@
+<!doctype html>
+<title>{% block title %}{% endblock %} - colmap+ </title>
+<link rel="stylesheet" href="{{ url_for('static', filename = 'style.css')}}">
+<nav>
+    <h1>colmap+</h1>
+    <ul>
+            <li><a href="{{ url_for('root') }}">3Dモデル作成(urlは仮)</a>
+            <li><a href="{{ url_for('upload') }}">3Dモデル展開(urlは仮)</a>
+    </ul>
+</nav>
+<section class="content">
+    <header>
+        {% block header %}{% endblock %}
+    </header>
+    {% for message in get_flashed_messages() %}
+        <div class="flash">{{ message }}</div>
+    {% endfor %}
+    {% block content %}{% endblock %}
+</section>

@@ -6,3 +6,7 @@ from flask import(
 from werkzeug.exceptions import abort
 
 bp = Blueprint("expand", __name__)
+
+@bp.route("/")
+def index():
+    return render_template("blog/expand.html", posts=posts)

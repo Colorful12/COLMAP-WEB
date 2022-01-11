@@ -12,7 +12,7 @@ def create_app(test_config=None):
 
     @app.route("/")
     def root():
-        return "This is root page."
+        return render_template("base.html")
 
     @app.route('/upload')
     def upload():
@@ -27,7 +27,7 @@ def create_app(test_config=None):
                 file.save(os.path.join(app.config['UPLOAD_FOLDER'],secure_filename(file.filename)))
             return 'file uploaded successfully'
     
-    #from . import model
+
     #model.name_of_the_program()
 
     return app
