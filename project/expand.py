@@ -5,8 +5,8 @@ from flask import(
 )
 from werkzeug.exceptions import abort
 
-bp = Blueprint("expand", __name__)
+bp = Blueprint("expand", __name__, url_prefix = "/expand")
 
 @bp.route("/")
 def index():
-    return render_template("blog/expand.html", posts=posts)
+    return render_template("expand/index.html")

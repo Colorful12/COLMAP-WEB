@@ -28,6 +28,7 @@ def create_app(test_config=None):
             return 'file uploaded successfully'
     
 
-    #model.name_of_the_program()
+    from . import expand
+    app.register_blueprint(expand.bp)
 
     return app
