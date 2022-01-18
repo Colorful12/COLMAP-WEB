@@ -2,5 +2,8 @@
 
 {% block header %}
   <h1>{% block title %}モデルの展開を行えるページ{% endblock %}</h1>
-  <a class="action" href="{{ url_for('root') }}">モデルの読み込み </a>
+  <form action = "/expand/savefile" method = "POST" enctype = "multipart/form-data">
+    <input type = "file" name = "file" multiple=""/>
+    <input type = "submit"/>
+  </form>
 {% endblock %}
